@@ -1,0 +1,55 @@
+{% extends 'admin_base.html' %}
+{% block js %}
+  <script id="table_row" type="text/html">
+  {% raw %}
+  <tr article_id="1">
+    <td class="checkbox">
+      <input type="checkbox"/>
+    </td>
+    <td class="title">
+      <a href="{{ urls.edit }}">{{ title }}</a> (<a href="{{ urls.view }}">View</a>)
+    </td>
+    <td class="start">
+      {{ start }}
+    </td>
+    <td class="end">
+      {{ end }}
+    </td>
+    <td class="actions">
+      <a href="{{ urls.edit }}">Edit</a> / <a href="{{ urls.bin }}">Bin</a>
+    </td>
+  </tr>
+  {% endraw %}
+  </script>
+  <script>
+  $(function() {
+    populate_tables();
+  });
+  </script>
+{% endblock %}
+{% block main_column %}
+      <div id="events-live">
+        <h2>Live <span class="subheader">Events that are live on the site.</span></h2>
+        <table class="pages js-pop" url="{{ url_for('admin.json_events') }}" status="live" page="1">
+          <tr class="header">
+            <th>&nbsp;</th>
+            <th class="title">Title</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Actions</th>
+          </tr>
+        </table>
+      </div>
+      <div id="events-draft">
+        <h2>Drafts <span class="subheader">Events that are not live.</span></h2>
+        <table class="pages js-pop" url="{{ url_for('admin.json_events') }}" status="draft" page="1">
+          <tr class="header">
+            <th>&nbsp;</th>
+            <th class="title">Title</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Actions</th>
+          </tr>
+        </table>
+      </div>
+{% endblock %}

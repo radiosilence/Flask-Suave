@@ -1,0 +1,58 @@
+{% extends 'admin_base.html' %}
+{% block js %}
+  <script src="{{url_for('static', filename='admin/js/articles.js') }}"></script>
+  <script id="table_row" type="text/html">
+  {% raw %}
+  <tr article_id="1">
+    <td class="checkbox">
+      <input type="checkbox"/>
+    </td>
+    <td class="title">
+      <a href="{{ urls.edit }}">{{ title }}</a>
+    </td>
+    <td class="revision">
+      {{ revision }}
+    </td>
+    <td class="date">
+      {{ pub_date }}
+    </td>
+    <td class="actions">
+      <a href="{{ urls.edit }}">Edit</a> / <a href="{{ urls.bin }}">Bin</a>
+    </td>
+  </tr>
+  {% endraw %}
+  </script>
+  <script>
+  $(function() {
+    populate_tables();
+  });
+  </script>
+{% endblock %}
+{% block main_column %}
+      <div id="published-articles">
+        <h2>Published <span class="subheader">A list of your published articles.</span></h2>
+        <table class="articles js-pop" url="{{ url_for('admin.json_user_articles') }}" status="published" page="1">
+          <tr class="header">
+            <th>&nbsp;</th>
+            <th class="title">Title</th>
+            <th>Revision</th>
+            <th>Published On</th>
+            <th>Actions</th>
+          </tr>
+        </table>
+      </div>
+
+      <div id="draft-articles">
+        <h2>Drafts <span class="subheader">These articles will not show on the site.</span></h2>
+
+        <table class="articles js-pop" url="{{ url_for('admin.json_user_articles') }}" status="draft" page="1">
+          <tr class="header">
+            <th>&nbsp;</th>
+            <th class="title">Title</th>
+            <th>Revision</th>
+            <th>Written On</th>
+            <th>Actions</th>
+          </tr>
+        </table>
+      </div>
+{% endblock %}

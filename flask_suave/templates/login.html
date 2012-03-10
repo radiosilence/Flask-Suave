@@ -1,0 +1,13 @@
+{% extends 'admin_boilerplate.html' %}
+{% block admin %}
+    <form method="POST" id="login-form">
+        <h1>Login</h1>
+        {{ flashes() }}
+        <dl>
+        {% for field in form %}
+            {{ render_field(field) }}
+        {% endfor %}
+        </dl>
+        <input type="submit" value="{{ submit }}">
+    </form>
+{% endblock %}

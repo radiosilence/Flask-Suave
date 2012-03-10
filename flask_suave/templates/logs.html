@@ -1,0 +1,33 @@
+{% extends 'admin_base.html' %}
+{% block js %}
+  <script src="{{url_for('static', filename='admin/js/articles.js') }}"></script>
+  <script id="table_row" type="text/html">
+  {% raw %}
+  <tr obj_id="{{ id }}">
+    <td class="date">
+      {{ when }}
+    </td>
+    <td class="entry">
+      {{ entry }}
+    </td>
+  </tr>
+  {% endraw %}
+  </script>
+  <script>
+  $(function() {
+    populate_tables();
+  });
+  </script>
+{% endblock %}
+{% block main_column %}
+      <div id="log-entries">
+        <h2>Log Entries <span class="subheader">An extensive list of adminstrative actions.</span></h2>
+        <table class="logs js-pop" url="{{ url_for('admin.json_logs') }}" status="any" page="1">
+          <tr class="header">
+            <th>When</th>
+            <th class="title">Entry</th>
+          </tr>
+        </table>
+      </div>
+      </div>
+{% endblock %}

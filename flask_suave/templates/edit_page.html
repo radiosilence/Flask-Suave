@@ -1,0 +1,17 @@
+{% extends 'admin_base.html' %}
+{% block main_column %}
+<p>This is where you can create or edit a page.</p>
+<form class="editor" method="POST">
+    {{ form.csrf }}
+    <fieldset class="basic">
+        {{ render_field(form.title, class_='title') }}
+        {{ render_field(form.section_id, label='Section') }}
+        {{ render_field(form.status) }}
+        {{ render_field(form.body) }}
+    </fieldset>
+    <fieldset class="advanced">
+        {{ render_field(form.slug, class='slug') }}
+    </fieldset>
+    <div class="twelve columns alpha omega" style="text-align: right"><input type="submit" value="{{ submit }}" /></div>   
+</form>
+{% endblock %}

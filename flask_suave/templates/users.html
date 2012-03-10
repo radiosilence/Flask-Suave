@@ -1,0 +1,51 @@
+{% extends 'admin_base.html' %}
+{% block js %}
+  <script id="table_row" type="text/html">
+  {% raw %}
+  <tr article_id="1">
+    <td class="checkbox">
+      <input type="checkbox"/>
+    </td>
+    <td class="title">
+      <a href="{{ urls.edit }}">{{ username }}</a> (<a href="{{ urls.view }}">View</a>)
+    </td>
+    <td class="firstname">
+      {{ firstname }}
+    </td>
+    <td class="surname">
+      {{ surname }}
+    </td>
+    <td class="group">
+      {{ group }}
+    </td>
+    <td class="status">
+      {{ status }}
+    </td>
+    <td class="actions">
+      <a href="{{ urls.edit }}">Edit</a> / <a href="{{ urls.bin }}">Bin</a>
+    </td>
+  </tr>
+  {% endraw %}
+  </script>
+  <script>
+  $(function() {
+    populate_tables();
+  });
+  </script>
+{% endblock %}
+{% block main_column %}
+      <div id="pages-live">
+        <h2>Users <span class="subheader">People that use the website.</span></h2>
+        <table class="pages js-pop" url="{{ url_for('admin.json_users') }}" status="any" page="1">
+          <tr class="header">
+            <th>&nbsp;</th>
+            <th class="title">Username</th>
+            <th class="firstname">First Name</th>
+            <th class="surname">Surname</th>
+            <th class="group">Group</th>
+            <th class="status">Status</th>
+            <th>Actions</th>
+          </tr>
+        </table>
+      </div>
+{% endblock %}
