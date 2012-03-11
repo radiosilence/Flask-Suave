@@ -136,14 +136,12 @@ def create_app(debug=False):
     suave = Suave()
     # Change static path based on whether we're debugging.
     if debug:
-        print "Debug mode."
-        app = Flask(__name__, static_path='/static')
-
+        app = Flask(__name__, static_url_path='/static')
     else:
-        app = Flask(__name__, static_path='')
+        app = Flask(__name__, static_url_path='')
 
     # Handle configuration
-    app.config.from_object('settings')
+    app.config.from_object('flask.ext.suave.default_settings')
     app.config.from_envvar('SUAVE_SETTINGS', silent=True)
     app.config['DEBUG'] = debug
     
