@@ -7,8 +7,8 @@ from flask import g, url_for, render_template
 
 from flaskext.mail import Message
 
-from .utils import Hasher
-from current_app import db, cache, mail
+from .auth import Hasher
+from flask.ext.suave import db, cache, mail
 
 
 class SiteEntity(object):

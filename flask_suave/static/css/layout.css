@@ -1,0 +1,527 @@
+/*
+* Skeleton V1.1
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 8/17/2011
+*/
+
+/* Table of Content
+==================================================
+	#Site Styles
+	#Page Styles
+	#Media Queries
+	#Font-Face */
+
+/* #Site Styles
+================================================== */
+
+body {
+	font: 14px "PT Serif", sans-serif;
+	color: black;
+}
+
+a, a:visited {
+	color: black;
+}
+
+div.container>header h1 {
+	font-size: 36px;
+	border: 0px;
+	font-variant: normal;
+}
+div.container>header h1 a {
+	text-decoration: none;
+}
+
+h1 {
+	font-weight: bold;
+	font-variant: small-caps;
+	color: black;
+	font-size: 24px;
+	margin-top: 20px;
+	margin-bottom: 0px;
+	line-height: 1.8;
+	padding-top: 0px;
+}
+h2 {
+	font-size: 16px;
+	font-weight: bold;
+	font-style: italic;
+	margin: 20px 0 0 0;
+	line-height: 1;
+	display: block;
+}
+
+sup,
+sub {
+	height: 0;
+	line-height: 1;
+	font-size: 10px;
+	vertical-align: baseline;
+	position: relative;
+	
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: .5ex;
+}
+
+/* NAVIGATION */
+
+div.container>header {
+	height: 100px;
+}
+div.container>nav {
+	padding-top: 0px;
+}
+
+div.container>nav div {
+	overflow: hidden;
+}
+
+div.container>nav div h1 {
+	font-size: 18px;
+	margin: 0 0 10px 0;
+}
+
+div.container>nav div div.inner {
+	display: none;
+}
+
+div.container>nav div ul {
+	margin-bottom: 10px;
+}
+div.container>nav div ul li {
+	margin-bottom: 5px;
+}
+div.container>nav.articles div.articles div.inner {
+	display: block;
+}
+
+div.container>nav.events div.events div.inner {
+	display: block;
+}
+
+div.container>nav.editor div.editor div.inner {
+	display: block;
+}
+
+div.container>nav.moderation div.moderation div.inner {
+	display: block;
+}
+
+div.container>nav.pages div.pages div.inner {
+	display: block;
+}
+
+div.container>nav.site div.site div.inner {
+	display: block;
+}
+
+div.container>nav.users div.users div.inner {
+	display: block;
+}
+/* TABULAR */
+
+table {
+	margin: 10px 0 20px 0;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	line-height: 2;
+	width: 100%;
+}
+
+table h1 {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	font-size: 18px;
+}
+table th {
+	font-weight: bold;
+	text-align: center;
+}
+
+table th.title {
+	text-align: left;
+}
+table tr.header {
+	border-bottom: 1px solid black;
+}
+table tr.header:hover {
+	background-color: transparent;
+}
+
+
+table td.checkbox {
+	width: 30px;
+	text-align: center;
+	background: url(../images/unselected.png) no-repeat center;
+}
+
+table tr.selected td.checkbox {
+	background: url(../images/selected.png) no-repeat center;
+}
+table tr.selected {
+	color: white;
+	background-color: #b23939;
+}
+
+table tr.selected a {
+	color: white;
+}
+
+table td.checkbox input {
+	display: none;
+}
+table td.actions {
+	width: 90px;
+	text-align: center;
+}
+
+table tr.footer {
+	overflow: hidden;
+	padding: 0px;
+	border-top: 1px solid black;
+	line-height: 1;
+}
+
+table tr.footer td {
+	padding: 0px;
+	margin: 0px;
+}
+
+table tr.footer td span {
+	margin-top: 4px;
+	display: block;
+	float: right;
+	font-size: 13px;
+	font-style: italic;
+}
+table tr.footer td ul {
+	float: right;
+	display: block;
+	margin: 0px;
+	height: 20px;
+}
+
+table tr.footer td li {
+	float: left;
+	line-height: 1;
+	font-size: 14px;
+	margin: 0 0 0 0px;
+	height: 20px;
+}
+
+table tr.footer td li a {
+	display: block;
+	padding: 2px 4px 4px 4px;
+	width: 14px;
+	height: 14px;
+	margin: 0px;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+}
+table tr.footer td li.selected a {
+	background: black;
+	color: white;
+}
+/* Table cell classes */
+
+table td.title {
+	line-height: 1.3;
+	font-weight: bold;
+}
+
+table td.title span.author {
+	font-weight: normal;
+	font-style: italic;
+	line-height: 1.8;
+}
+
+table td.revision {
+	width: 50px;
+	text-align: center;
+}
+
+table td.date {
+	width: 200px;
+	font-style: italic;
+	text-align: center;
+}
+
+span.subheader {
+	font-weight: normal;
+	font-size: 12px;
+	color: black;
+}
+
+/* FLASHES */
+ul.flashes {
+	position: fixed;
+	left: 100%;
+	margin-left: -210px;
+	top: 0px;
+	width: 200px;
+
+}
+
+ul.flashes li {
+	width: 100%;
+	display: block;
+	padding: 0px;
+	margin: 5px 5px 0px 0px;
+	line-height: 1;
+	font-style: italic;
+	color: black;
+	background: white;
+	border: 1px solid black;
+	font-weight: normal;
+	position: relative;
+}
+
+ul.flashes li div {
+	text-align: left;
+	border: 0px solid red;
+	padding: 5px;
+	border-left: 5px solid #fed572;
+	width: 185px;
+}
+ul.flashes li.success div {
+	border-left-color: #73af45;
+}
+ul.flashes li.error div {
+	border-left-color: #fd5452;
+}
+
+/* FORMS */
+
+label {
+	margin: 10px 0 5px 0;
+	font-size: 14px;
+}
+
+input[type=text], input[type=password], input[type=date] { 
+	color: black;
+	font-family: 'PT Serif', serif;
+	font-style: italic;
+	padding: 2px 0px;
+	font-size: 14px;
+	border-radius: 0px;
+	border: 1px solid white;
+	border-bottom: 1px dotted black;
+}
+
+span.required label:before {
+	content: '* ';
+	color: red;
+}
+
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"], select {
+	background: #b23939;
+	color: white;
+	font-weight: bold;
+	border: 1px solid black;
+	font-size: 14px;
+	padding: 2px 10px;
+	font-family: 'PT Sans', sans-serif;
+	border-radius: 2px;
+}
+
+.button,
+button,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+	background-color: #c43f3f;
+}
+select {
+	background-color: #181410;
+	color: white;
+	padding: 2px 0px;
+}
+
+select:hover {
+	background-color: #241e18;
+}
+
+select[disabled="true"] {
+	background-color: white;
+	color: grey;
+	border-color: grey;
+}
+option {
+	padding: 5px;
+	color: black;
+}
+
+input[type=text], input[type=password], input[type=date], select {
+	width: 98%;
+}
+
+
+input.title {
+	width: 100%;
+	font-size: 24px;
+}
+
+
+textarea {
+	border: 1px dotted black;
+	font-family: monospace;
+	padding: 10px;
+	font-size: 12px;
+	color: black;
+	width: 100%;
+}
+
+textarea#body {
+	height: 400px;
+}
+input[type=submit] {
+	float: right;
+}
+
+
+::-webkit-input-placeholder {
+    color:    #444;
+}
+:-moz-placeholder {
+    color:    #444;
+}
+
+form p {
+	display: block;
+}
+form ul.errors {
+	color: #dd1412;
+	margin-top: -10px;
+}
+
+/* Nav form elements */
+
+div.container>nav input[type=text], div.container>nav input[type=password], div.container>nav input[type=date], div.container>nav select {
+	width: 98%;
+}
+
+/* START User Fragment */
+	span.user  {
+		display: inline;
+		font-weight: bold;
+	}
+/* END User Fragment */
+
+p.welcome-user {
+	font-style: italic;
+	text-align: right;
+	margin: 42px 0px 0px 0px;
+}
+
+p.welcome-group {
+	text-align: right;
+	margin: 0px 0px 0px 0px;
+}
+p.welcome-group span.user .link {
+	display: none;
+}
+
+p.welcome-group span.user .group {
+	display: inline;
+}
+
+
+div.filter {
+	border: 1px solid black;
+	margin: 10px;
+	padding: 10px;
+}articles
+
+
+div.filter h1 {
+	font-size: 16px;
+	margin-top: 0px;
+	border: 0px;
+}
+
+div.filter input#article-search {
+	width: 170px;
+}
+/* #Page Styles
+================================================== */
+
+
+/* Articles */
+
+a.write-new {
+	font-size: 14px;
+}
+
+/* Login Page */
+
+#login-form {
+	position: absolute;
+	width: 220px;
+	left: 50%;
+	top: 50%;
+	display: block;
+	margin-top: -180px;
+	margin-left: -110px;
+}
+
+#login-form h1 {
+	border: 0px;
+	font-variant: normal;
+	font-size: 48px;
+}
+
+/* #Media Queries
+================================================== */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {
+		div.container>header h1 {
+			font-size: 24px;
+		}
+	}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {}
+
+
+/* #Font-Face
+================================================== */
+/* 	This is the proper syntax for an @font-face file
+		Just create a "fonts" folder at the root,
+		copy your FontName into code below and remove
+		comment brackets */
+
+/*	@font-face {
+	    font-family: 'FontName';
+	    src: url('../fonts/FontName.eot');
+	    src: url('../fonts/FontName.eot?iefix') format('eot'),
+	         url('../fonts/FontName.woff') format('woff'),
+	         url('../fonts/FontName.ttf') format('truetype'),
+	         url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+*/
