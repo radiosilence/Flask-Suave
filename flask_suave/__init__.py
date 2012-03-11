@@ -18,6 +18,7 @@ mail = Mail()
 class Suave(object):
     def __init__(self, app=None, **kwargs):
         self.blueprint = admin
+        print self.blueprint
         if app is not None:
             self.app = app
             self.init_app(self.app, **kwargs)
@@ -39,8 +40,10 @@ class Suave(object):
 
         # Initialise Mail
         mail.init_app(app)
+        import flask
 
         import flask.ext.suave.views
+        print app.url_map
 
     def before_request(self):
         ctx = _request_ctx_stack.top

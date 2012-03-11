@@ -3,15 +3,10 @@ from flask import request, session, g, redirect, url_for, abort, \
 
 from flask.ext.suave import admin, db
 
-
 from .models import User, LogEntry
-
 from .forms import UserEditForm, LoginForm
-
-
 from .utils import auth_logged_in, auth_allowed_to, admin_section, \
     edit_instance, json_inner, log_out
-
 from .auth import Auth, AuthError, AuthInactiveError
 
 
