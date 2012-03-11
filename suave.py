@@ -3,7 +3,10 @@ import sys
 
 def create(app_name):
     print "Creating app %s in dir of same name..." % app_name
-
+    # Generate folder layout
+    # Create app.py
+    # Create settings.py
+    # Symlink suave migrations dir
 
 def main():
     if sys.argv[1] == 'create':
