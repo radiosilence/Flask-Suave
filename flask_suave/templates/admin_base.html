@@ -8,51 +8,6 @@
     </form>
 {% endmacro %}
 
-{% macro menu_articles() %}
-  <h1>Articles</h1>
-  <ul class="actions square">
-    <li><a href="{{ url_for('admin.create_article') }}" class="write-new">Write an article&hellip;</a></li>
-    <li><a href="{{ url_for('admin.list_articles') }}">Your Articles</a></li>
-  </ul>
-{% endmacro %}
-
-{% macro menu_editor() %}
-  <h1>Editor</h1>
-  <ul class="actions square">
-    <li><a href="{{ url_for('admin.dashboard_editor') }}">Manage Articles</a></li>
-  </ul>
-{% endmacro %}
-
-{% macro menu_events() %}
-  <h1>Events</h1>
-  <ul class="actions square">
-    <li><a href="{{ url_for('admin.list_events') }}">Manage Events</a></li>
-  </ul>
-  <div class="inner">
-    <ul class="actions square">
-      <li><a href="{{ url_for('admin.create_event') }}">Create an Event</a></li>
-    </ul>
-  </div>
-{% endmacro %}
-
-{% macro menu_moderation() %}
-  <h1>Moderation</h1>
-  <ul class="actions square">
-  </ul>
-{% endmacro %}
-
-{% macro menu_pages() %}
-  <h1>Pages</h1>
-  <ul class="actions square">
-    <li><a href="{{ url_for('admin.list_pages') }}">Manage Pages</a></li>
-  </ul>
-  <div class="inner">
-    <ul class="actions square">
-      <li><a href="{{ url_for('admin.create_page') }}">Create a Page</a></li>
-    </ul>
-  </div>
-{% endmacro %}
-
 {% macro menu_site() %}
   <h1>Site</h1>
   <ul class="actions square">

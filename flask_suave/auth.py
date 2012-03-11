@@ -3,7 +3,6 @@ from binascii import b2a_hex
 from os import urandom
 import math
 import whirlpool
-from functools import wraps
 
 
 class Hasher:
@@ -34,8 +33,10 @@ class Hasher:
             string = b2a_hex(whirlpool.hash(string))
         return string
 
+
 class HashMismatch(Exception):
     pass
+
 
 class Auth:
     def __init__(self, session, db, user_class):
@@ -47,7 +48,7 @@ class Auth:
         user = self.user_class.query.filter_by(username=username).first()
         if not user:
             raise AuthUserNotFoundError()
-        
+
         if user.status != 'active':
             raise AuthInactiveError()
 
@@ -59,18 +60,22 @@ class Auth:
 
         return user
 
+
 class AuthError(Exception):
     pass
+
 
 class AuthUserNotFoundError(AuthError):
     pass
 
+
 class AuthPasswordIncorrectError(AuthError):
     pass
+
 
 class AuthInactiveError(AuthError):
     pass
 
+
 class AuthPermissionDeniedError(AuthError):
     pass
-
