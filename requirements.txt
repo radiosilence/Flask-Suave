@@ -1,4 +1,10 @@
 Flask
 Flask-SQLAlchemy
+SQLAlchemy-migrate
+Flask-Mail
+Flask-WTF
+Flask-Cache
+Flask-Cache-PyLibMC
+Flask-Markdown
 whirlpool
 pylibmc
