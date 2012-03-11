@@ -7,6 +7,7 @@ from flask import g, redirect, flash, url_for, abort, request, \
     render_template, session
 
 from .models import LogEntry
+from .auth import AuthPermissionDeniedError
 
 def edit_instance(cls, form_cls, edit_template='form.html', id=None,
     submit_value=None, view=None, callback=None, **kwargs):

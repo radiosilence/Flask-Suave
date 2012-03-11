@@ -1,0 +1,35 @@
+{%- macro flashes() %}
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul class="flashes">
+      {% for category, message in messages %}
+        {% if category == 'error' %}
+          <li class="error"><div>{{ message }}</div></li>
+        {% elif category == 'success' %}
+          <li class="success"><div>{{ message }}</div></li>
+        {% else %}
+          <li><div>{{ message }}</div></li>
+        {% endif %}
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+{% endmacro -%}
+{%- macro render_field(field, class=None, label=None) -%}
+    {%- if field.type != 'HiddenField' -%}
+    <p>
+      {% if field.flags.required %}<span class="required">{% endif %}
+      {{ field.label(label=label) }}
+      {% if field.flags.required %}</span>{% endif %}
+        {{ field(placeholder=field.description, **kwargs)|safe }}
+      {%- if field.errors -%}
+        <ul class="errors">
+        {% for error in field.errors %}<li>{{ error }}</li>{% endfor %}
+        </ul>
+      {%- endif -%}
+    </p>
+    {%- else -%}
+        {{ field(**kwargs) }}
+    {%- endif -%}
+{%- endmacro -%}
+{%- block main %}{% endblock %}

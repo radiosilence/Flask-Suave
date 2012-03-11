@@ -42,7 +42,7 @@ class Auth:
         self.session = session
         self.db = db
         self.user_class = user_class
-    
+
     def log_in(self, username, password):
         user = self.user_class.query.filter_by(username=username).first()
         if not user:
