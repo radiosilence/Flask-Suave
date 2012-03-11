@@ -18,8 +18,6 @@ cache = Cache()
 mail = Mail()
 
 
-
-
 class Suave(object):
     def __init__(self, app=None, **kwargs):
         self.blueprint = admin
@@ -142,6 +140,7 @@ def create_app(debug=False):
 
     # Handle configuration
     app.config.from_object('flask.ext.suave.default_settings')
+    app.config.from_object('settings')
     app.config.from_envvar('SUAVE_SETTINGS', silent=True)
     app.config['DEBUG'] = debug
     
