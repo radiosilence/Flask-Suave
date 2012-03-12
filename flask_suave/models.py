@@ -55,6 +55,7 @@ class Displayable(SiteEntity):
 
 
 class User(db.Model):
+    __tablename__ = 'suave_user'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(255), unique=True)
     password = db.Column(db.String(255), nullable=False)
@@ -65,7 +66,7 @@ class User(db.Model):
     email = db.Column(db.String(120), nullable=False, unique=True)
     phone = db.Column(db.String(80))
     twitter = db.Column(db.String(80))
-    group_id = db.Column(db.Integer, db.ForeignKey('group.id'))
+    group_id = db.Column(db.Integer, db.ForeignKey('suave_group.id'))
     group = db.relationship('Group',
         backref=db.backref('users', lazy='dynamic'))
     status = db.Column(db.String(10))
@@ -194,13 +195,14 @@ class User(db.Model):
         return d
 
 
-permissions = db.Table('permissions',
-    db.Column('permission_id', db.Integer, db.ForeignKey('permission.id')),
-    db.Column('group_id', db.Integer, db.ForeignKey('group.id'))
+permissions = db.Table('suave_permissions',
+    db.Column('permission_id', db.Integer, db.ForeignKey('suave_permission.id')),
+    db.Column('group_id', db.Integer, db.ForeignKey('suave_group.id'))
 )
 
 
 class Group(db.Model):
+    __tablename__ = 'suave_group'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), unique=True)
 
@@ -216,6 +218,7 @@ class Group(db.Model):
 
 
 class Permission(db.Model):
+    __tablename__ = 'suave_permission'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), unique=True)
     title = db.Column(db.String(255))
@@ -232,9 +235,9 @@ class Permission(db.Model):
 
 
 class LogEntry(db.Model):
-    __tablename__ = 'log_entry'
+    __tablename__ = 'suave_log_entry'
     id = db.Column(db.Integer, primary_key=True)
-    subject_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    subject_id = db.Column(db.Integer, db.ForeignKey('suave_user.id'))
     subject = db.relationship('User',
         backref=db.backref('actions', lazy='dynamic'))
     target_id = db.Column(db.Integer)
