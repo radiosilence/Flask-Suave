@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from flask.ext.suave import create_app, db
 
-def main():
+def init():
     print "We need to create a superuser..."
     SU_USERNAME = raw_input('\t username? ')
     SU_PASSWORD = raw_input('\t password? ')
@@ -68,4 +68,4 @@ def main():
     print "Added superuser %s" % u
 
 if __name__ == '__main__':
-    main()
+    init()
